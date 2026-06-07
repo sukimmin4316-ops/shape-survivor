@@ -360,8 +360,10 @@ function updateShield() {
     let shieldRadius = 55 + skills.shield * 2;
 
     // 보호막 데미지: 레벨 1마다 확실히 증가
-    let shieldDamage = 0.25 + skills.shield * 0.08;
-
+    let shieldDamage =
+    player.attackDamage * 0.3 +
+    0.25 +
+    skills.shield * 0.08;
     for (let i = 0; i < shieldCount; i++) {
         let angle = shieldAngle + (Math.PI * 2 / shieldCount) * i;
         let sx = player.x + Math.cos(angle) * shieldRadius;
