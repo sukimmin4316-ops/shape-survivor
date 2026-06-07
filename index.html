@@ -401,7 +401,10 @@ function updateShockwave() {
 
         // 충격파: 레벨마다 크기와 데미지 둘 다 증가
         let range = 100 + skills.shockwave * 14;
-        let damage = 1.5 + skills.shockwave * 0.45;
+        let damage =
+    player.attackDamage +
+    1.5 +
+    skills.shockwave * 0.45;
 
         for (let enemy of enemies) {
             let dx = player.x - enemy.x;
